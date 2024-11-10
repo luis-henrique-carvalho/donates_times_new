@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.5.0)
+      concurrent-ruby (~> 1.0)
     actioncable (8.0.0)
       actionpack (= 8.0.0)
       activesupport (= 8.0.0)
@@ -81,6 +83,7 @@ GEM
     bcrypt_pbkdf (1.1.1)
     benchmark (0.4.0)
     bigdecimal (3.1.8)
+    blueprinter (1.1.2)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
     brakeman (6.2.2)
@@ -112,6 +115,7 @@ GEM
       railties (>= 5.0.0)
     faker (3.5.1)
       i18n (>= 1.8.11, < 2)
+    ffi (1.17.0-x86_64-linux-gnu)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -119,6 +123,9 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
+    image_processing (1.13.0)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     io-console (0.7.2)
     irb (1.14.1)
       rdoc (>= 4.0.0)
@@ -146,6 +153,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.4)
+    mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.25.1)
     msgpack (1.7.3)
@@ -171,6 +179,9 @@ GEM
     parser (3.3.6.0)
       ast (~> 2.4.1)
       racc
+    pg_search (2.3.7)
+      activerecord (>= 6.1)
+      activesupport (>= 6.1)
     psych (5.2.0)
       stringio
     puma (6.4.3)
@@ -270,6 +281,9 @@ GEM
     rubocop-rspec (3.2.0)
       rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
+    ruby-vips (2.2.2)
+      ffi (~> 1.12)
+      logger
     securerandom (0.3.1)
     shoulda-matchers (6.4.0)
       activesupport (>= 5.2.0)
@@ -320,15 +334,19 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  aasm (~> 5.5)
   annotate
   bcrypt (~> 3.1.7)
+  blueprinter
   bootsnap
   brakeman
   database_cleaner-active_record (~> 2.2)
   debug
   factory_bot_rails (~> 6.4)
   faker (~> 3.5)
+  image_processing (~> 1.2)
   kamal
+  pg_search
   puma (>= 5.0)
   rails (~> 8.0.0)
   rspec-rails (~> 7.1)
