@@ -42,7 +42,11 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem 'brakeman', require: false
+  gem 'rspec-rails', '~> 7.1'
 
+  gem 'factory_bot_rails', '~> 6.4'
+  gem 'faker', '~> 3.5'
+  gem 'simplecov_json_formatter', '~> 0.1.4', require: false
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem 'rubocop-rails-omakase', require: false
 end
@@ -54,4 +58,10 @@ group :development do
   gem 'rubocop-rspec', require: false
 
   gem 'annotate'
+end
+
+group :test do
+  gem 'database_cleaner-active_record', '~> 2.2'
+  gem 'shoulda-matchers', '~> 6.4'
+  gem 'simplecov', '~> 0.22.0', require: false
 end
